@@ -1,13 +1,13 @@
 {
   "name": "@eienjs/dev-tools",
   "description": "Tools for develop fast and easy adonis apps",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "type": "module",
   "main": "",
   "module": "",
   "types": "",
   "files": [
-    "build"
+    "dist"
   ],
   "exports": {},
   "scripts": {
@@ -24,12 +24,16 @@
     "version": "pnpm run build && pnpm run changelog"
   },
   "devDependencies": {
+    "@adonisjs/assembler": "^7.8.2",
     "@adonisjs/core": "^6.9.0",
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
+    "@japa/api-client": "^2.0.3",
+    "@japa/runner": "^3.1.4",
     "@nodecfdi/eslint-config": "^2.0.3",
     "@nodecfdi/prettier-config": "^1.2.0",
     "@nodecfdi/tsconfig": "^1.7.2",
+    "@swc/core": "^1.7.26",
     "@types/node": "^20.11.0",
     "auto-changelog": "^2.5.0",
     "eslint": "^9.10.0",
@@ -41,7 +45,13 @@
     "typescript": "^5.4.5"
   },
   "peerDependencies": {
-    "@adonisjs/core": "^6.9.0"
+    "@adonisjs/core": "^6.9.0",
+    "@japa/api-client": "^2.0.3"
+  },
+  "peerDependenciesMeta": {
+    "@japa/api-client": {
+      "optional": true
+    }
   },
   "author": "Fernando Isidro <luffynando@gmail.com>",
   "license": "MIT",
@@ -83,13 +93,18 @@
     "message": "chore(release): :tada: %s",
     "tag": "latest",
     "branch": "main",
-    "testScript": "test:run"
+    "yolo": true
   },
   "tshy": {
     "selfLink": false,
+    "dialects": [
+      "esm"
+    ],
     "exports": {
       ".": "./src/index.ts",
-      "./package.json": "./package.json"
+      "./types": "./src/types.ts",
+      "./dev_tools_provider": "./src/providers/dev_tools_provider.ts",
+      "./plugins/api_client": "./src/plugins/japa/dev_tools_api_client.ts"
     }
   }
 }
