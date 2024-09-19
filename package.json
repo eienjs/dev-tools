@@ -10,9 +10,6 @@
     "build"
   ],
   "exports": {},
-  "imports": {
-    "#src/*": "./src/*.js"
-  },
   "scripts": {
     "prepare": "is-in-ci || husky",
     "typecheck": "tsc --noEmit",
