@@ -1,0 +1,98 @@
+{
+  "name": "@eienjs/dev-tools",
+  "description": "Tools for develop fast and easy adonis apps",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "",
+  "module": "",
+  "types": "",
+  "files": [
+    "build"
+  ],
+  "exports": {},
+  "imports": {
+    "#src/*": "./src/*.js"
+  },
+  "scripts": {
+    "prepare": "is-in-ci || husky",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --fix",
+    "lint:check": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "changelog": "auto-changelog -p && git add CHANGELOG.md",
+    "prebuild": "pnpm lint:check && pnpm typecheck",
+    "build": "tshy",
+    "release": "np",
+    "version": "pnpm run build && pnpm run changelog"
+  },
+  "devDependencies": {
+    "@adonisjs/core": "^6.9.0",
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@nodecfdi/eslint-config": "^2.0.3",
+    "@nodecfdi/prettier-config": "^1.2.0",
+    "@nodecfdi/tsconfig": "^1.7.2",
+    "@types/node": "^20.11.0",
+    "auto-changelog": "^2.5.0",
+    "eslint": "^9.10.0",
+    "husky": "^9.1.6",
+    "is-in-ci": "^1.0.0",
+    "np": "^10.0.7",
+    "prettier": "^3.3.3",
+    "tshy": "^3.0.2",
+    "typescript": "^5.4.5"
+  },
+  "peerDependencies": {
+    "@adonisjs/core": "^6.9.0"
+  },
+  "author": "Fernando Isidro <luffynando@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/eienjs/dev-tools",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eienjs/dev-tools.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eienjs/dev-tools/issues"
+  },
+  "keywords": [
+    "dev",
+    "tools",
+    "adonisjs",
+    "japa",
+    "http",
+    "codes"
+  ],
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "prettier": "@nodecfdi/prettier-config",
+  "packageManager": "pnpm@9.10.0",
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
+  "auto-changelog": {
+    "template": "keepachangelog",
+    "hideCredit": true
+  },
+  "np": {
+    "message": "chore(release): :tada: %s",
+    "tag": "latest",
+    "branch": "main",
+    "testScript": "test:run"
+  },
+  "tshy": {
+    "selfLink": false,
+    "exports": {
+      ".": "./src/index.ts",
+      "./package.json": "./package.json"
+    }
+  }
+}
