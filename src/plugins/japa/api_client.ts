@@ -1,5 +1,5 @@
+import { ResponseStatus } from '@adonisjs/core/http';
 import { ApiResponse } from '@japa/api-client';
-import { HttpStatusCode } from '../../status_codes.js';
 
 /**
  * Extending the "@japa/api-client" plugin with custom methods to
@@ -7,254 +7,250 @@ import { HttpStatusCode } from '../../status_codes.js';
  */
 export const extendApiClient = (): void => {
   ApiResponse.macro('assertContinue', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_CONTINUE);
+    this.assertStatus(ResponseStatus.Continue);
   });
 
   ApiResponse.macro('assertSwitchingProtocols', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_SWITCHING_PROTOCOLS);
+    this.assertStatus(ResponseStatus.SwitchingProtocols);
   });
 
   ApiResponse.macro('assertProcessing', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_PROCESSING);
+    this.assertStatus(ResponseStatus.Processing);
   });
 
   ApiResponse.macro('assertEarlyHints', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_EARLY_HINTS);
+    this.assertStatus(ResponseStatus.EarlyHints);
   });
 
   ApiResponse.macro('assertOk', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_OK);
+    this.assertStatus(ResponseStatus.Ok);
   });
 
   ApiResponse.macro('assertCreated', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_CREATED);
+    this.assertStatus(ResponseStatus.Created);
   });
 
   ApiResponse.macro('assertAccepted', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_ACCEPTED);
+    this.assertStatus(ResponseStatus.Accepted);
   });
 
   ApiResponse.macro('assertNonAuthoritativeInformation', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_NON_AUTHORITATIVE_INFORMATION);
+    this.assertStatus(ResponseStatus.NonAuthoritativeInformation);
   });
 
   ApiResponse.macro('assertNoContent', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_NO_CONTENT);
+    this.assertStatus(ResponseStatus.NoContent);
   });
 
   ApiResponse.macro('assertResetContent', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_RESET_CONTENT);
+    this.assertStatus(ResponseStatus.ResetContent);
   });
 
   ApiResponse.macro('assertPartialContent', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_PARTIAL_CONTENT);
+    this.assertStatus(ResponseStatus.PartialContent);
   });
 
   ApiResponse.macro('assertMultiStatus', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_MULTI_STATUS);
+    this.assertStatus(ResponseStatus.MultiStatus);
   });
 
   ApiResponse.macro('assertAlreadyReported', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_ALREADY_REPORTED);
+    this.assertStatus(ResponseStatus.AlreadyReported);
   });
 
-  ApiResponse.macro('assertImUsed', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_IM_USED);
+  ApiResponse.macro('assertIMUsed', function (this: ApiResponse) {
+    this.assertStatus(ResponseStatus.IMUsed);
   });
 
   ApiResponse.macro('assertMultipleChoices', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_MULTIPLE_CHOICES);
+    this.assertStatus(ResponseStatus.MultipleChoices);
   });
 
   ApiResponse.macro('assertMovedPermanently', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_MOVED_PERMANENTLY);
+    this.assertStatus(ResponseStatus.MovedPermanently);
   });
 
   ApiResponse.macro('assertFound', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_FOUND);
+    this.assertStatus(ResponseStatus.Found);
   });
 
   ApiResponse.macro('assertSeeOther', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_SEE_OTHER);
+    this.assertStatus(ResponseStatus.SeeOther);
   });
 
   ApiResponse.macro('assertNotModified', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_NOT_MODIFIED);
+    this.assertStatus(ResponseStatus.NotModified);
   });
 
   ApiResponse.macro('assertUseProxy', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_USE_PROXY);
-  });
-
-  ApiResponse.macro('assertReserved', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_RESERVED);
+    this.assertStatus(ResponseStatus.UseProxy);
   });
 
   ApiResponse.macro('assertTemporaryRedirect', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_TEMPORARY_REDIRECT);
+    this.assertStatus(ResponseStatus.TemporaryRedirect);
   });
 
-  ApiResponse.macro('assertPermanentlyRedirect', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_PERMANENTLY_REDIRECT);
+  ApiResponse.macro('assertPermanentRedirect', function (this: ApiResponse) {
+    this.assertStatus(ResponseStatus.PermanentRedirect);
   });
 
   ApiResponse.macro('assertBadRequest', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_BAD_REQUEST);
+    this.assertStatus(ResponseStatus.BadRequest);
   });
 
   ApiResponse.macro('assertUnauthorized', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_UNAUTHORIZED);
+    this.assertStatus(ResponseStatus.Unauthorized);
   });
 
   ApiResponse.macro('assertPaymentRequired', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_PAYMENT_REQUIRED);
+    this.assertStatus(ResponseStatus.PaymentRequired);
   });
 
   ApiResponse.macro('assertForbidden', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_FORBIDDEN);
+    this.assertStatus(ResponseStatus.Forbidden);
   });
 
   ApiResponse.macro('assertNotFound', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_NOT_FOUND);
+    this.assertStatus(ResponseStatus.NotFound);
   });
 
   ApiResponse.macro('assertMethodNotAllowed', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_METHOD_NOT_ALLOWED);
+    this.assertStatus(ResponseStatus.MethodNotAllowed);
   });
 
   ApiResponse.macro('assertNotAcceptable', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_NOT_ACCEPTABLE);
+    this.assertStatus(ResponseStatus.NotAcceptable);
   });
 
   ApiResponse.macro('assertProxyAuthenticationRequired', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_PROXY_AUTHENTICATION_REQUIRED);
+    this.assertStatus(ResponseStatus.ProxyAuthenticationRequired);
   });
 
   ApiResponse.macro('assertRequestTimeout', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_REQUEST_TIMEOUT);
+    this.assertStatus(ResponseStatus.RequestTimeout);
   });
 
   ApiResponse.macro('assertConflict', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_CONFLICT);
+    this.assertStatus(ResponseStatus.Conflict);
   });
 
   ApiResponse.macro('assertGone', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_GONE);
+    this.assertStatus(ResponseStatus.Gone);
   });
 
   ApiResponse.macro('assertLengthRequired', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_LENGTH_REQUIRED);
+    this.assertStatus(ResponseStatus.LengthRequired);
   });
 
   ApiResponse.macro('assertPreconditionFailed', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_PRECONDITION_FAILED);
+    this.assertStatus(ResponseStatus.PreconditionFailed);
   });
 
-  ApiResponse.macro('assertRequestEntityTooLarge', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_REQUEST_ENTITY_TOO_LARGE);
+  ApiResponse.macro('assertPayloadTooLarge', function (this: ApiResponse) {
+    this.assertStatus(ResponseStatus.PayloadTooLarge);
   });
 
-  ApiResponse.macro('assertRequestUriTooLong', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_REQUEST_URI_TOO_LONG);
+  ApiResponse.macro('assertURITooLong', function (this: ApiResponse) {
+    this.assertStatus(ResponseStatus.URITooLong);
   });
 
   ApiResponse.macro('assertUnsupportedMediaType', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_UNSUPPORTED_MEDIA_TYPE);
+    this.assertStatus(ResponseStatus.UnsupportedMediaType);
   });
 
-  ApiResponse.macro('assertRequestedRangeNotSatisfiable', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_REQUESTED_RANGE_NOT_SATISFIABLE);
+  ApiResponse.macro('assertRangeNotSatisfiable', function (this: ApiResponse) {
+    this.assertStatus(ResponseStatus.RangeNotSatisfiable);
   });
 
   ApiResponse.macro('assertExpectationFailed', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_EXPECTATION_FAILED);
+    this.assertStatus(ResponseStatus.ExpectationFailed);
   });
 
-  ApiResponse.macro('assertIAmATeapot', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_I_AM_A_TEAPOT);
+  ApiResponse.macro('assertImATeapot', function (this: ApiResponse) {
+    this.assertStatus(ResponseStatus.ImATeapot);
   });
 
   ApiResponse.macro('assertMisdirectedRequest', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_MISDIRECTED_REQUEST);
+    this.assertStatus(ResponseStatus.MisdirectedRequest);
   });
 
   ApiResponse.macro('assertUnprocessableEntity', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_UNPROCESSABLE_ENTITY);
+    this.assertStatus(ResponseStatus.UnprocessableEntity);
   });
 
   ApiResponse.macro('assertLocked', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_LOCKED);
+    this.assertStatus(ResponseStatus.Locked);
   });
 
   ApiResponse.macro('assertFailedDependency', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_FAILED_DEPENDENCY);
+    this.assertStatus(ResponseStatus.FailedDependency);
   });
 
   ApiResponse.macro('assertTooEarly', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_TOO_EARLY);
+    this.assertStatus(ResponseStatus.TooEarly);
   });
 
   ApiResponse.macro('assertUpgradeRequired', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_UPGRADE_REQUIRED);
+    this.assertStatus(ResponseStatus.UpgradeRequired);
   });
 
   ApiResponse.macro('assertPreconditionRequired', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_PRECONDITION_REQUIRED);
+    this.assertStatus(ResponseStatus.PreconditionRequired);
   });
 
   ApiResponse.macro('assertTooManyRequests', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_TOO_MANY_REQUESTS);
+    this.assertStatus(ResponseStatus.TooManyRequests);
   });
 
   ApiResponse.macro('assertRequestHeaderFieldsTooLarge', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_REQUEST_HEADER_FIELDS_TOO_LARGE);
+    this.assertStatus(ResponseStatus.RequestHeaderFieldsTooLarge);
   });
 
   ApiResponse.macro('assertUnavailableForLegalReasons', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_UNAVAILABLE_FOR_LEGAL_REASONS);
+    this.assertStatus(ResponseStatus.UnavailableForLegalReasons);
   });
 
   ApiResponse.macro('assertInternalServerError', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_INTERNAL_SERVER_ERROR);
+    this.assertStatus(ResponseStatus.InternalServerError);
   });
 
   ApiResponse.macro('assertNotImplemented', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_NOT_IMPLEMENTED);
+    this.assertStatus(ResponseStatus.NotImplemented);
   });
 
   ApiResponse.macro('assertBadGateway', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_BAD_GATEWAY);
+    this.assertStatus(ResponseStatus.BadGateway);
   });
 
   ApiResponse.macro('assertServiceUnavailable', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_SERVICE_UNAVAILABLE);
+    this.assertStatus(ResponseStatus.ServiceUnavailable);
   });
 
   ApiResponse.macro('assertGatewayTimeout', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_GATEWAY_TIMEOUT);
+    this.assertStatus(ResponseStatus.GatewayTimeout);
   });
 
-  ApiResponse.macro('assertVersionNotSupported', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_VERSION_NOT_SUPPORTED);
+  ApiResponse.macro('assertHTTPVersionNotSupported', function (this: ApiResponse) {
+    this.assertStatus(ResponseStatus.HTTPVersionNotSupported);
   });
 
-  ApiResponse.macro('assertVariantAlsoNegotiatesExperimental', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_VARIANT_ALSO_NEGOTIATES_EXPERIMENTAL);
+  ApiResponse.macro('assertVariantAlsoNegotiates', function (this: ApiResponse) {
+    this.assertStatus(ResponseStatus.VariantAlsoNegotiates);
   });
 
   ApiResponse.macro('assertInsufficientStorage', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_INSUFFICIENT_STORAGE);
+    this.assertStatus(ResponseStatus.InsufficientStorage);
   });
 
   ApiResponse.macro('assertLoopDetected', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_LOOP_DETECTED);
+    this.assertStatus(ResponseStatus.LoopDetected);
   });
 
   ApiResponse.macro('assertNotExtended', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_NOT_EXTENDED);
+    this.assertStatus(ResponseStatus.NotExtended);
   });
 
   ApiResponse.macro('assertNetworkAuthenticationRequired', function (this: ApiResponse) {
-    this.assertStatus(HttpStatusCode.HTTP_NETWORK_AUTHENTICATION_REQUIRED);
+    this.assertStatus(ResponseStatus.NetworkAuthenticationRequired);
   });
 };

@@ -1,19 +1,15 @@
-import { Response } from '@adonisjs/core/http';
-import { HttpStatusCode } from '../status_codes.js';
+import { Response, ResponseStatus } from '@adonisjs/core/http';
 
-Response.macro(
-  'jsendSuccess',
-  function (this: Response, result, httpCode = HttpStatusCode.HTTP_OK) {
-    this.status(httpCode).json({
-      status: 'success',
-      data: result === undefined ? null : result,
-    });
-  },
-);
+Response.macro('jsendSuccess', function (this: Response, result, httpCode = ResponseStatus.Ok) {
+  this.status(httpCode).json({
+    status: 'success',
+    data: result === undefined ? null : result,
+  });
+});
 
 Response.macro(
   'jsendFail',
-  function (this: Response, errors, httpCode = HttpStatusCode.HTTP_UNPROCESSABLE_ENTITY) {
+  function (this: Response, errors, httpCode = ResponseStatus.UnprocessableEntity) {
     this.status(httpCode).json({
       status: 'fail',
       data: errors,
@@ -22,7 +18,7 @@ Response.macro(
 );
 
 Response.macro('jsendError', function (this: Response, message, options) {
-  const httpCode = options?.httpCode ?? HttpStatusCode.HTTP_NOT_FOUND;
+  const httpCode = options?.httpCode ?? ResponseStatus.NotFound;
 
   this.status(httpCode).json({
     status: 'error',
