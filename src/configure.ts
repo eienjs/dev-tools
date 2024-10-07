@@ -20,6 +20,14 @@ const configure = async function (command: ConfigureCommand): Promise<void> {
   await codemods.updateRcFile((rcFile) => {
     rcFile.addProvider('@eienjs/dev-tools/dev_tools_provider');
   });
+
+  await codemods.registerJapaPlugin('devToolsApiClient()', [
+    {
+      isNamed: true,
+      module: '@eienjs/dev-tools/plugins/api_client',
+      identifier: 'devToolsApiClient',
+    },
+  ]);
 };
 
 export default configure;
