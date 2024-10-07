@@ -1,7 +1,7 @@
 {
   "name": "@eienjs/dev-tools",
   "description": "Tools for develop fast and easy adonis apps",
-  "version": "0.0.1-1",
+  "version": "1.0.0",
   "type": "module",
   "module": "./dist/esm/index.js",
   "files": [
