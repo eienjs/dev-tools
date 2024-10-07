@@ -2,12 +2,30 @@ import { type ApplicationService } from '@adonisjs/core/types';
 
 declare module '@adonisjs/core/http' {
   interface Request {
+    /**
+     * Check if request with header accepts json
+     */
     wantsJSON(): boolean;
   }
 
   interface Response {
+    /**
+     * Send success response using jsend standard
+     *
+     * More info: https://github.com/omniti-labs/jsend?tab=readme-ov-file#so-how-does-it-work
+     */
     jsendSuccess(result: unknown, httpCode?: number): void;
+    /**
+     * Send fail response using jsend standard
+     *
+     * More info: https://github.com/omniti-labs/jsend?tab=readme-ov-file#so-how-does-it-work
+     */
     jsendFail(errors: Record<string, unknown>, httpCode?: number): void;
+    /**
+     * Send error response using jsend standard
+     *
+     * More info: https://github.com/omniti-labs/jsend?tab=readme-ov-file#so-how-does-it-work
+     */
     jsendError(
       message: string,
       options?: { httpCode?: number; code?: string | number; errors?: unknown },
