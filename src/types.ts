@@ -1,3 +1,3 @@
-import { type HttpStatusCode } from './status_codes.js';
+import { type ResponseStatus } from '@adonisjs/core/http';
 
-export type HttpStatus = (typeof HttpStatusCode)[keyof typeof HttpStatusCode];
+export type HttpStatus = (typeof ResponseStatus)[keyof typeof ResponseStatus];
