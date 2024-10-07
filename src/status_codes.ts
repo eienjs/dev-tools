@@ -1,7 +1,7 @@
 import { ResponseStatus } from '@adonisjs/core/http';
-import { type HttpStatus } from './types.js';
+import { type ResponseStatusCodes } from './types.js';
 
-export const HttpStatusText: Record<HttpStatus, string> = {
+export const ResponseStatusText: Record<ResponseStatusCodes, string> = {
   [ResponseStatus.Continue]: 'Continue',
   [ResponseStatus.SwitchingProtocols]: 'Switching Protocols',
   [ResponseStatus.Processing]: 'Processing', // RFC2518
